@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     return (
@@ -10,17 +11,17 @@ const Register = () => {
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="name" type="text" placeholder="Enter your name" required/>
+                                id="name" type="text" placeholder="Enter your name" required />
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="email" type="email" placeholder="Enter your email" required/>
+                                id="email" type="email" placeholder="Enter your email" required />
                         </div>
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="password" type="password" placeholder="Enter your password" required/>
+                                id="password" type="password" placeholder="Enter your password" required />
                         </div>
                         <div class="flex items-center justify-between">
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -28,6 +29,7 @@ const Register = () => {
                                 Register
                             </button>
                         </div>
+                        <p className='my-4 text-center'> <Link className='text-orange-600 font-bold' to="/logIn">Have a Account Login here </Link> </p>
                     </form>
                 </div>
             </div>

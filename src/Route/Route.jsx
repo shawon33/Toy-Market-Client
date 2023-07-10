@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../LayOut/Main";
-import LogIn from "../Page/SharePage/NavBar/LogIn/LogIn";
-import Register from "../Page/SharePage/NavBar/LogIn/Register/Register";
+
+import LogIn from "../Page/SharePage/Form/LogIn/LogIn";
+import Register from "../Page/SharePage/Form/Register/Register";
 
 const router = createBrowserRouter([
     {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Page/SharePage/NavBar/Navbar';
 import { Outlet } from 'react-router-dom';
-import Footer from '../Page/SharePage/Footer';
+import Footer from '../Page/SharePage/Footer/Footer';
 
 const Main = () => {
     return (
@@ -9,7 +9,6 @@ const Main = () => {
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
-            
         </div>
     );
 };
