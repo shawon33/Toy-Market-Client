@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import img1 from '../../../Photo/Gallery/img1.jpg'
-import img2 from '../../../Photo/Gallery/img2.jpg'
-import img3 from '../../../Photo/Gallery/img3.jpg'
-import img4 from '../../../Photo/Gallery/img4.jpg'
-import img5 from '../../../Photo/Gallery/img5.jpg'
-import img6 from '../../../Photo/Gallery/img6.jpg'
-import img7 from '../../../Photo/Gallery/img7.jpg'
-import img8 from '../../../Photo/Gallery/img8.jpg'
-import img9 from '../../../Photo/Gallery/img9.jpg'
+import img1 from '../../../Photo/Gallery/photo1.jpg'
+import img2 from '../../../Photo/Gallery/photo2.jpg'
+import img3 from '../../../Photo/Gallery/photo3.jpg'
+import img4 from '../../../Photo/Gallery/photo4.jpg'
+import img5 from '../../../Photo/Gallery/photo5.jpg'
+import img6 from '../../../Photo/Gallery/photo6.jpg'
+import img7 from '../../../Photo/Gallery/photo7.jpg'
+import img8 from '../../../Photo/Gallery/phoot8.jpg'
 
 
 const Gallerysection = () => {
@@ -19,8 +18,7 @@ const Gallerysection = () => {
         img5,
         img6,
         img7,
-        img8,
-        img9,  
+        img8, 
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,7 +33,7 @@ const Gallerysection = () => {
 
     return (
         <div className='mt-18'>
-            <h1 className='text-6xl text-center font-bold text-pink-500'>Gallery</h1>
+            <h1 className='text-6xl text-center font-bold text-pink-500 my-4 mx-4 bg-slate-100 rounded'>Gallery</h1>
             <div>
                 <div className="relative">
                     <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} className="w-full h-auto" />
