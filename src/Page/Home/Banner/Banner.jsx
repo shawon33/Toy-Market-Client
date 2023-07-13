@@ -4,8 +4,8 @@ import banner1 from "../../../Photo/Banner/banner2.jpg"
 
 const Banner = () => {
     return (
-        <div className=' md:my-12'>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className=' sm:mx-auto md:my-12'>
+            <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4">
                 <div className="bg-blue-500 p-4 m-4 rounded">
                     <div className='text-center md:pt-18 px-6'>
                         <div className='p-4  '>

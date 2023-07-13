@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../Photo/logo.jpg'
+import { AuthContext } from '../../../AuthProvider/AuthPovider';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <div className='mx-48' >
+        <div className='mx-48 sm:m-auto' >
             <nav className="bg-gray-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
@@ -37,19 +46,23 @@ const Navbar = () => {
                                         Add Toys
                                     </Link>
                                     <Link
-                                        to="/about"
+                                        to="/blogs"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                     >
-                                        About
-                                    </Link>
-                                    <Link
-                                        to="/login"
-                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                                    >
-                                        Login
+                                        Blogs
                                     </Link>
 
+                                        {
+                                            user && <img className='my-auto' src={user.photoURL} style={{ height: 40 }} />
+                                        }
+                                        {
+                                            user ?
+                                                <button onClick={handleLogOut} variant="secondary">LogOut</button> :
+                                                <Link to='/login' ><button variant="secondary" >Login</button></Link>
+                                        }
+
                                 </div>
+
                             </div>
                         </div>
                         <div className="-mr-2 flex md:hidden">
@@ -125,12 +138,19 @@ const Navbar = () => {
                             >
                                 About
                             </Link>
-                            <Link
-                                to="/logIn"
-                                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                            >
-                                LogIn
-                            </Link>
+                            {
+                                user &&
+
+                                <img src={user.photoURL} style={{ height: 25 }} />
+
+
+
+                            }
+                            {
+                                user ?
+                                    <button onClick={handleLogOut} className='sm:m-auto' variant="secondary">LogOut</button> :
+                                    <Link to='/login' ><button variant="secondary" >Login</button></Link>
+                            }
                         </div>
                     </div>
                 )}
