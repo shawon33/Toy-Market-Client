@@ -6,10 +6,12 @@ import Register from "../Page/SharePage/Form/Register/Register";
 import Home from "../Page/Home/Home";
 import AllToy from "../Page/ALLToy/AllToy";
 import Blogs from "../Page/Blogs/Blogs";
+import Error from "../Page/Error/Error";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: '/',
@@ -30,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: 'allToys',
         element:<AllToy></AllToy>
+      
       }
       // {
       //   path:'/toy/:id',

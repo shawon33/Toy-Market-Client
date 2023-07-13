@@ -21,7 +21,7 @@ const Banner = () => {
                         <img className="w-full h-auto rounded" src={banner} alt="Banner Image" style={{ width: 700, height: 800 }} />
                     </div>
                 </div>
-
+ 
             </div>
         </div>
     );
