@@ -40,7 +40,7 @@ const Navbar = () => {
                                         All Toys
                                     </Link>
                                     <Link
-                                        to="/addToys"
+                                        to="/addToy"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                     >
                                         Add Toys
@@ -127,7 +127,7 @@ const Navbar = () => {
                                 All Toys
                             </Link>
                             <Link
-                                to="/addToys"
+                                to="/addToy"
                                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                             >
                                 Add Toys
