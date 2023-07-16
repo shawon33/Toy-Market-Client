@@ -6,7 +6,7 @@ const AllToy = () => {
     const [toy, setToy] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/toy')
+        fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -33,7 +33,7 @@ const AllToy = () => {
                         <tr>
                             {
                                 toy.map(res => <TOyInfo
-                                    key={toy._id}
+                                    key={toy.id}
                                     res={res}
                                 ></TOyInfo>)
                             }

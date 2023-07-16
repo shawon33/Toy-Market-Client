@@ -6,7 +6,7 @@ const SubCategary = () => {
     const [toyCategory, setCategory] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toy`)
+        fetch(`http://localhost:5000/toys`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

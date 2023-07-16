@@ -7,46 +7,46 @@ const AddToy = () => {
         console.log('toy is ready');
         const form = event.target;
         const photo = form.photo.value;
-        const name=form.toyName.value;
-        const sellerName=form.sellerName.value;
-        const sellerEmail=form.email.value;
-        const subCategory=form.subCategory.value;
-        const rating=form.rating.value;
-        const price=form.price.value;
-        const details=form.details.value;
-        const quantity=form.quantity.value;
-        console.log(photo,name,sellerName,sellerEmail,subCategory,price,details,quantity,rating);
+        const name = form.toyName.value;
+        const sellerName = form.sellerName.value;
+        const sellerEmail = form.email.value;
+        const subCategory = form.subCategory.value;
+        const rating = form.rating.value;
+        const price = form.price.value;
+        const details = form.details.value;
+        const quantity = form.quantity.value;
+        console.log(photo, name, sellerName, sellerEmail, subCategory, price, details, quantity, rating);
 
         const newToy = {
-            name: name, 
-            email:sellerEmail, 
-            img:photo, 
+            name: name,
+            email: sellerEmail,
+            picture: photo,
             seller_name: sellerName,
-            category:subCategory,
-            rating:rating,
-            price:price,
-            available_quantity:quantity,
-            details_description:details
+            category: subCategory,
+            rating: rating,
+            price: price,
+            available_quantity: quantity,
+            details_description: details
         }
 
         console.log(newToy);
 
-        fetch('http://localhost:5000/toy', {
-            method: 'POST', 
+        fetch('http://localhost:5000/toys', {
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
-            }, 
+            },
             body: JSON.stringify(newToy)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                alert('Toy Add successfully')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('Toy Add successfully')
+                }
+            })
 
- 
+
     }
     return (
         <div className='mx-48 my-8 bg-slate-50'>
