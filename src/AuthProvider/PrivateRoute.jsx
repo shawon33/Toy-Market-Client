@@ -3,11 +3,13 @@ import { AuthContext } from './AuthPovider';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({children}) => {
-    const {user,loading} = useContext(AuthContext);
+    const {user,loader} = useContext(AuthContext);
     const location = useLocation();
-     if(loading){
+
+     if(loader){
         return <div className='mx-48'><span className="loading loading-bars loading-lg"></span></div>
      }
+
      if(user?.email){
         return children
      }
