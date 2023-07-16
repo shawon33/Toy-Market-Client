@@ -45,6 +45,14 @@ const Navbar = () => {
                                     >
                                         Add Toys
                                     </Link>
+                                    {
+                                        user &&  <Link
+                                        to="/myToy"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                    >
+                                        My Toy
+                                    </Link>
+                                    }
                                     <Link
                                         to="/blogs"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -52,14 +60,15 @@ const Navbar = () => {
                                         Blogs
                                     </Link>
 
-                                        {
-                                            user && <img className='my-auto' src={user.photoURL} style={{ height: 40 }} />
-                                        }
-                                        {
-                                            user ?
-                                                <button onClick={handleLogOut} variant="secondary">LogOut</button> :
-                                                <Link to='/login' ><button variant="secondary" >Login</button></Link>
-                                        }
+
+                                    {
+                                        user && <img className='my-auto' src={user.photoURL} style={{ height: 40 }} />
+                                    }
+                                    {
+                                        user ?
+                                            <button onClick={handleLogOut} variant="secondary">LogOut</button> :
+                                            <Link to='/login' ><button variant="secondary" >Login</button></Link>
+                                    }
 
                                 </div>
 
@@ -133,22 +142,26 @@ const Navbar = () => {
                                 Add Toys
                             </Link>
                             <Link
+                                to="/myToy"
+                                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            >
+                                My Toy
+                            </Link>
+                            <Link
                                 to="/about"
                                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                             >
                                 About
                             </Link>
+
                             {
                                 user &&
-
                                 <img src={user.photoURL} style={{ height: 25 }} />
-
-
-
-                            }
+                            },
                             {
                                 user ?
-                                    <button onClick={handleLogOut} className='sm:m-auto' variant="secondary">LogOut</button> :
+                                    <button onClick={handleLogOut} className='sm:m-auto' variant="secondary">LogOut</button>
+                                    :
                                     <Link to='/login' ><button variant="secondary" >Login</button></Link>
                             }
                         </div>

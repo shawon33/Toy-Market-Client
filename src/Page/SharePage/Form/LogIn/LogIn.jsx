@@ -6,8 +6,10 @@ import Swal from 'sweetalert2'
 const LogIn = () => {
     const { signIn, googleLogin } = useContext(AuthContext)
     const navigate = useNavigate();
+
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+   
 
 
     const handleGoogleLogin = () => {
@@ -15,12 +17,13 @@ const LogIn = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                navigate(from, { replace: true })
+               
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'Your success message goes here',
                 });
+                navigate(from, { replace: true })
 
             })
             .catch((error) => {

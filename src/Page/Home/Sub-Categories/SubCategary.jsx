@@ -19,7 +19,8 @@ const SubCategary = () => {
     const AmericanGirl = toyCategory.filter(x => x.category == 3);
 
     return (
-        <div >
+        <div > 
+             <h1 className='text-pink-400 text-6xl text-center bg-slate-50 p-3 font-bold rounded mb-4'>Sub Category</h1>
             <Tabs>
                 <TabList>
                     <Tab>Doll</Tab>

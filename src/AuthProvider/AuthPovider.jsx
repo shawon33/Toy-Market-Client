@@ -6,6 +6,7 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthPovider = ({children}) => {
+
     const [user,setUser] =useState(null);
     const [loader,setLoading] = useState(true)
 
@@ -27,7 +28,7 @@ const AuthPovider = ({children}) => {
     };
 
     const logOut = () => {
-        setLoading(false)
+        setLoading(true)
         return signOut(auth);
     }
 

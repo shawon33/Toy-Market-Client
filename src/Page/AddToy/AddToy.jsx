@@ -1,6 +1,12 @@
-import React from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthPovider";
+import Swal from "sweetalert2";
+
+
 
 const AddToy = () => {
+  const {user} = useContext(AuthContext)
+  console.log(user);
 
     const handleAddToy = event => {
         event.preventDefault();
@@ -8,8 +14,8 @@ const AddToy = () => {
         const form = event.target;
         const photo = form.photo.value;
         const name = form.toyName.value;
-        const sellerName = form.sellerName.value;
-        const sellerEmail = form.email.value;
+        const sellerName = user?.displayName;
+        const sellerEmail = user?.email;
         const subCategory = form.subCategory.value;
         const rating = form.rating.value;
         const price = form.price.value;
@@ -31,7 +37,7 @@ const AddToy = () => {
 
         console.log(newToy);
 
-        fetch('http://localhost:5000/toys', {
+        fetch('http://localhost:5000/sellerToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +48,11 @@ const AddToy = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert('Toy Add successfully')
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'Your success message goes here',
+                    });
                 }
             })
 
@@ -63,11 +73,11 @@ const AddToy = () => {
                     </div>
                     <div className="mb-4">
                         <label for="name" className="block text-gray-700 text-sm font-bold mb-2">Seller Name:</label>
-                        <input id="name" type="text" name='sellerName' placeholder="Seller Name" className="input input-bordered w-full" required />
+                        <input id="name" type="text" name='sellerName' defaultValue={user?.displayName}  className="input input-bordered w-full" required />
                     </div>
                     <div className="mb-4">
                         <label for="email" className="block text-gray-700 text-sm font-bold mb-2">Seller Email:</label>
-                        <input id="email" type="email" name='email' placeholder="Seller Email" className="input input-bordered w-full" required />
+                        <input id="email" type="email" name='email' defaultValue={user?.email}  className="input input-bordered w-full" required />
                     </div>
                     <div className="mb-4">
                         <label for="email" className="block text-gray-700 text-sm font-bold mb-2">Sub Category:</label>
