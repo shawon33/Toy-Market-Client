@@ -12,14 +12,14 @@ const AllToy = () => {
         fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setToy(data)
             })
 
         fetch('http://localhost:5000/sellerToys')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setSellerToy(data)
             })
     }, [])
