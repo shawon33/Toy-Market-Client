@@ -9,13 +9,15 @@ import Swal from 'sweetalert2';
 
 const MyToyPage = () => {
     const { user } = useContext(AuthContext);
+
     const [sellerToy, setSellerToy] = useState([]);
+    
     const url = `http://localhost:5000/sellerToys?email=${user.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setSellerToy(data)
             })
 
@@ -45,7 +47,7 @@ const MyToyPage = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.deletedCount > 0) {
 
                             swalWithBootstrapButtons.fire(

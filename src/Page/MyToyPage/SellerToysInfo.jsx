@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const SellerToysInfo = ({ res, handleDelete }) => {
-    const { _id, name, email, seller_name, picture, price, available_quantity } = res;
 
+    const { _id, name, email, seller_name, picture, price, available_quantity } = res;
 
     return (
         <tr>
