@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import TOyInfo from './ToyInfo/TOyInfo';
+import SellerToy from './ToyInfo/SellerToy';
+
 
 
 const AllToy = () => {
     const [toy, setToy] = useState([])
+    const [sellerToy, setSellerToy] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:5000/toys')
@@ -12,11 +15,20 @@ const AllToy = () => {
                 console.log(data);
                 setToy(data)
             })
+
+        fetch('http://localhost:5000/sellerToys')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setSellerToy(data)
+            })
     }, [])
+
 
     return (
         <div className='mx-48 my-9 font-bold text-black text-2xl'>
-            <h1>this sis a toy{toy.length}</h1>
+            
+
             <div className="w-full overflow-x-auto">
                 <table className="min-w-full bg-pink-100">
                     <thead>
@@ -36,7 +48,20 @@ const AllToy = () => {
                                     key={toy.id}
                                     res={res}
                                 ></TOyInfo>)
+                            },
+                            {/* {
+                                sellerToy.map(seller => <SellerToy
+                                    key={sellerToy.id}
+                                    res={seller}
+                                ></SellerToy>)
+                            } */}
+                            {
+                                sellerToy.map(seller => <SellerToy
+                                    key={sellerToy.id}
+                                    seller={seller}
+                                ></SellerToy>)
                             }
+
                         </tr>
                     </tbody>
                 </table>
