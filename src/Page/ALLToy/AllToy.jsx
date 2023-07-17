@@ -49,12 +49,6 @@ const AllToy = () => {
                                     res={res}
                                 ></TOyInfo>)
                             },
-                            {/* {
-                                sellerToy.map(seller => <SellerToy
-                                    key={sellerToy.id}
-                                    res={seller}
-                                ></SellerToy>)
-                            } */}
                             {
                                 sellerToy.map(seller => <SellerToy
                                     key={sellerToy.id}
