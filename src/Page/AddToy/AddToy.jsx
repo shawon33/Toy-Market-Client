@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const AddToy = () => {
   const {user} = useContext(AuthContext)
-  console.log(user);
+ 
 
     const handleAddToy = event => {
         event.preventDefault();
@@ -35,9 +35,9 @@ const AddToy = () => {
             details_description: details
         }
 
-        console.log(newToy);
+        // console.log(newToy);
 
-        fetch('http://localhost:5000/sellerToys', {
+        fetch('https://toy-server-shawon33.vercel.app/sellerToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

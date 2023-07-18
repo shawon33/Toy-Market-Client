@@ -12,7 +12,7 @@ const MyToyPage = () => {
 
     const [sellerToy, setSellerToy] = useState([]);
     
-    const url = `http://localhost:5000/sellerToys?email=${user.email}`
+    const url = `https://toy-server-shawon33.vercel.app/sellerToys?email=${user.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -42,7 +42,7 @@ const MyToyPage = () => {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/sellerToys/${id}`, {
+                fetch(`https://toy-server-shawon33.vercel.app/sellerToys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
