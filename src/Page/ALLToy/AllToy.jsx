@@ -9,14 +9,14 @@ const AllToy = () => {
     const [sellerToy, setSellerToy] = useState([])
 
     useEffect(() => {
-        fetch('https://toy-server-shawon33.vercel.app/toys')
+        fetch('https://b7a11-toy-marketplace-server-side-shawon33-shawon33.vercel.app/toys')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
                 setToy(data)
             })
 
-        fetch('https://toy-server-shawon33.vercel.app/sellerToys')
+        fetch('https://b7a11-toy-marketplace-server-side-shawon33-shawon33.vercel.app/sellerToys')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

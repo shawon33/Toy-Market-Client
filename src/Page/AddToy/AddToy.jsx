@@ -37,7 +37,7 @@ const AddToy = () => {
 
         // console.log(newToy);
 
-        fetch('https://toy-server-shawon33.vercel.app/sellerToys', {
+        fetch('https://b7a11-toy-marketplace-server-side-shawon33-shawon33.vercel.app/sellerToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
