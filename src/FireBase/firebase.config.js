@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-console.log(import.meta.env.VITE_apiKey);
+
 const firebaseConfig = {
   apiKey: "AIzaSyC0zF3EFH2uegRxaeUri4Qx0ao-XNjOVDE",
   authDomain: "toy-shop-421dc.firebaseapp.com",

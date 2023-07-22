@@ -35,7 +35,6 @@ const SellerToysInfo = ({ res, handleDelete }) => {
                 {price}
             </th>
             <th>
-           
                 <Link to={`/updateToy/${_id}`}>
                     <button className="btn btn-outline btn-info">UpDate Toy</button>
                 </Link>

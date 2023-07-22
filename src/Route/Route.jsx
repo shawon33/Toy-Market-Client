@@ -43,12 +43,12 @@ const router = createBrowserRouter([
       {
         path:'toys/:id',
         element:<PrivateRoute><ToyInfo></ToyInfo></PrivateRoute>,
-        loader:({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-shawon33-shawon33.vercel.app/toys/${params.id}`)
+        loader:({ params }) => fetch(`https://toy-server-shawon33.vercel.app/toys/${params.id}`)
       },
       {
         path:'sellerToys/:id',
         element:<PrivateRoute><SellerToy></SellerToy></PrivateRoute>,
-        loader:({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-shawon33-shawon33.vercel.app/sellerToys/${params.id}`)
+        loader:({ params }) => fetch(`https://toy-server-shawon33.vercel.app/sellerToys/${params.id}`)
       },
       {
         path:'addToy',
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       {
         path:'updateToy/:id',
         element:<MyToyUpdate></MyToyUpdate>,
-        loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-shawon33-shawon33.vercel.app/sellerToys/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-server-shawon33.vercel.app/sellerToys/${params.id}`)
       }
     ]
   },

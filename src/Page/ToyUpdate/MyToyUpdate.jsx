@@ -34,8 +34,7 @@ const MyToyUpdate = () => {
             available_quantity: quantity,
             details_description: details
         }
-        console.log(updateToy);
-        fetch(`https://b7a11-toy-marketplace-server-side-shawon33-shawon33.vercel.app/sellerToys/${_id}`, {
+        fetch(`https://toy-server-shawon33.vercel.app/sellerToys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -44,8 +43,8 @@ const MyToyUpdate = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
+                // console.log(data);
+                if (data.matchedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Toy Updated Successfully',
@@ -60,7 +59,7 @@ const MyToyUpdate = () => {
         <div className='mx-48 my-8 bg-slate-50'>
             <div className="flex justify-center">
                 <form className="w-full max-w-sm " onSubmit={handleUpdateToy}>
-                    <h1 className="text-pink-500 text-6xl font-bold text-center">Add A Toy</h1>
+                    <h1 className="text-pink-500 text-6xl font-bold text-center">Update  Toy</h1>
                     <div className="mb-4">
                         <label for="name" className="block text-gray-700 text-sm font-bold mb-2">Photo:</label>
                         <input id="name" type="photo" name='photo' defaultValue={picture} placeholder="Toy Photo" className="input input-bordered w-full" required />
